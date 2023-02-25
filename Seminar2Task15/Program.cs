@@ -12,15 +12,16 @@ Dictionary<int, string> dict = new Dictionary<int, string>()
   [6] = "Суббота, выходной!",
   [7] = "Воскресенье, выходной!"
 };
-Console.WriteLine("Введите  число ");
+// Просим ввести день недели
+Console.WriteLine("Введите  день недели: ");
 int num = int.Parse(Console.ReadLine() ?? "0");
 
-if (num>0&&num<6)
+if (num > 0 && num <= 7)
 {
   Console.WriteLine($"выбранный вами день - {dict[num]}");
 }
 else
 {
-    Console.WriteLine("Вы ввели не день недели!");
-  
+  Console.WriteLine("Вы ввели не день недели!");
+
 }
