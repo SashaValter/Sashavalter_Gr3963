@@ -15,11 +15,15 @@ Dictionary<int, string> dict = new Dictionary<int, string>()
 // Просим ввести день недели
 Console.WriteLine("Введите  день недели: ");
 int num = int.Parse(Console.ReadLine() ?? "0");
-
-if (num > 0 && num <= 7)
+// проверяем входит ли введеное нами число в массив
+if (dict.ContainsKey(num))
 {
-  Console.WriteLine($"выбранный вами день - {dict[num]}");
+  Console.WriteLine(dict[num]);
 }
+// if (num > 0 && num <= 7)
+// {
+//   Console.WriteLine($"выбранный вами день - {dict[num]}");
+// }
 else
 {
   Console.WriteLine("Вы ввели не день недели!");
