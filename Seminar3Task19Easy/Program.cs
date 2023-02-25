@@ -6,31 +6,27 @@ int ReadData(string msg)
   Console.WriteLine(msg);
   return int.Parse(Console.ReadLine() ?? "0");
 }
-
 // напишем метод, который устанавливает является ли пятизначное число палиндромом
-bool PalinTest(int num);//bool - тип данных который показывает удовлетворяет ли заданное значение нашему условию
+void numTest(int num)
 {
-  if (num < 10000 && num > 100000)
+  if (num > 9999 && num < 100000)// проверяем является ли число пятизначным
   {
-    Console.WriteLine("Вы ввели не пятизначное число");
-  }
-  else
-  {
-    bool res = false;
-    if ((num / 10000 == num % 10) && (num / 1000 % 10 == num / 10 % 1))
+    //сравниваем первую и последнию цифры числа; сравниваем вторую и предпоследнюю соответственно
+    if ((num / 10000 == num % 10) && (num / 1000 % 10 == num / 10 % 10))
     {
-      res = true;
-    }
-    return res;
-    if (res = true)
-    {
-      Console.WriteLine("Число является палиндромом");
+      Console.WriteLine($"число {num} - палиндром!");// выводим результат
     }
     else
     {
-      Console.WriteLine("Число не является палиндромом");
+      Console.WriteLine($"число {num} - не палиндром!");
     }
   }
+  else
+  {
+    Console.WriteLine("Вы ввели не пятизначное число!");
+  }
 }
+//просим ввести пятизначное число
 int num1 = ReadData("Введите пятизначное число: ");
-PalinTest(num1);
+//обращаемся к методу, который проверяет число
+numTest(num1);
